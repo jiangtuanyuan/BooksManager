@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    android:orientation="vertical"
+    tools:context=".activity.main.MainActivity">
+
+    <include layout="@layout/toolbar" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_topinfo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:text="张三,欢迎您进入系部图书管理系统!" />
 
-</android.support.constraint.ConstraintLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TableRow tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/tv_tusgl"
+                style="@style/TextViewStyle"
+                android:drawableTop="@drawable/ic_book"
+                android:text="图书管理" />
+
+            <TextView
+                android:id="@+id/tv_tsjygl"
+                style="@style/TextViewStyle"
+                android:drawableTop="@drawable/ic_book_borrowing"
+                android:text="借阅管理" />
+
+            <TextView
+                android:id="@+id/tv_xtxxgl"
+                style="@style/TextViewStyle"
+                android:drawableTop="@drawable/ic_students"
+                android:text="学生管理" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

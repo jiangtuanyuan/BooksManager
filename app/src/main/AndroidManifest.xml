@@ -36,7 +36,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-
         <!-- 启动页面 -->
         <activity android:name=".activity.WelcomeActivity">
             <intent-filter>
@@ -45,8 +44,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.main.MainActivity" />
         <activity android:name=".activity.login.LoginActivity" />
+        <activity android:name=".activity.register.RegisterActivity" />
+        <activity android:name=".activity.students.ui.StudenMainActivity" />
+        <activity android:name=".activity.students.ui.StudenADDActivity"></activity>
     </application>
 
 </manifest>
