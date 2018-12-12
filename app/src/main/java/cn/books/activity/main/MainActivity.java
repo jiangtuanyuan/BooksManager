@@ -19,6 +19,7 @@ import butterknife.OnClick;
 import cn.books.R;
 import cn.books.activity.login.LoginActivity;
 import cn.books.activity.students.ui.StudenMainActivity;
+import cn.books.activity.user.UserChooseActivity;
 import cn.books.base.BaseActivity;
 import cn.books.utils.SPUtils;
 import cn.books.view.IOSDialog;
@@ -82,11 +83,17 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_tusgl://图书管理
+                Intent groupsIn = new Intent(this, UserChooseActivity.class);
+                groupsIn.putExtra("mChooseNums", "more");
+                startActivityForResult(groupsIn, 101);
                 break;
             case R.id.tv_tsjygl://借阅管理
+                Intent intent = new Intent(this, UserChooseActivity.class);
+                intent.putExtra("mChooseNums", "single");
+                startActivityForResult(intent, 100);
                 break;
             case R.id.tv_xtxxgl://学生管理
-              startActivity(new Intent(this,StudenMainActivity.class));
+                startActivity(new Intent(this, StudenMainActivity.class));
                 break;
             default:
                 break;

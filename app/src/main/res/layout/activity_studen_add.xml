@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:text="系 部 图 书 管 理 系 统 \n 添 加 学 生"
+        android:text="系 部 图 书 管 理 系 统 \n 学 生 管 理"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:visibility="visible" />
@@ -50,13 +50,14 @@
                 android:src="@drawable/ic_studen_number" />
 
             <EditText
-                android:id="@+id/et_username"
+                android:id="@+id/et_stu_number"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_shape"
+                android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmMNBVCXZLKJHGFDSAPOIUYTREWQ"
                 android:hint="请输入学生学号"
                 android:maxLength="100"
                 android:singleLine="true"
@@ -66,7 +67,7 @@
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/iv_user_name_clear"
+                android:id="@+id/iv_stu_number_clear"
                 android:layout_width="28dp"
                 android:layout_height="match_parent"
                 android:scaleType="center"
@@ -97,7 +98,8 @@
                 android:src="@drawable/ic_login_user" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:id="@+id/et_stu_name"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -112,6 +114,7 @@
                 android:textSize="16sp" />
 
             <ImageView
+                android:id="@+id/iv_stu_name_clear"
                 android:layout_width="28dp"
                 android:layout_height="match_parent"
                 android:scaleType="center"
@@ -143,7 +146,8 @@
                 android:src="@drawable/ic_studen_class" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:id="@+id/et_stu_class"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -158,6 +162,7 @@
                 android:textSize="16sp" />
 
             <ImageView
+                android:id="@+id/iv_stu_class_clear"
                 android:layout_width="28dp"
                 android:layout_height="match_parent"
                 android:scaleType="center"
@@ -188,14 +193,16 @@
                 android:src="@drawable/ic_login_tel" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:id="@+id/et_stu_tel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_shape"
+                android:digits="0123456789"
                 android:hint="请输入学生手机号码"
-                android:maxLength="100"
+                android:maxLength="11"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="#EFE0E3"
@@ -203,6 +210,7 @@
                 android:textSize="16sp" />
 
             <ImageView
+                android:id="@+id/iv_stu_tel_clear"
                 android:layout_width="28dp"
                 android:layout_height="match_parent"
                 android:scaleType="center"

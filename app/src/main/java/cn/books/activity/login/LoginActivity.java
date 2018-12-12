@@ -90,6 +90,7 @@ public class LoginActivity extends BaseActivity {
                         ToastUtil.showToast("密码错误或者用户不存在!");
                     }
                 } else {
+                    closeProgressDialog();
                     ToastUtil.showToast("帐号密码不能为空！");
                 }
                 break;

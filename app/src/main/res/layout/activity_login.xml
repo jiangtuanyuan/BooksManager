@@ -47,7 +47,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_login_user" />
+                android:src="@drawable/ic_login_tel" />
 
             <EditText
                 android:id="@+id/user_name"
@@ -58,7 +58,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_shape"
                 android:digits="0123456789"
-                android:hint="请输入您的帐号"
+                android:hint="请输入您的电话号码"
                 android:inputType="number"
                 android:maxLength="11"
                 android:singleLine="true"

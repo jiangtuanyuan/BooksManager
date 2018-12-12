@@ -48,7 +48,10 @@
         <activity android:name=".activity.login.LoginActivity" />
         <activity android:name=".activity.register.RegisterActivity" />
         <activity android:name=".activity.students.ui.StudenMainActivity" />
-        <activity android:name=".activity.students.ui.StudenADDActivity"></activity>
+        <activity android:name=".activity.students.ui.StudenADDActivity" />
+        <activity android:name=".activity.booksmanagement.ui.BooksMainActivity"></activity>
+        <activity android:name=".activity.user.UserChooseActivity" />
+
     </application>
 
 </manifest>

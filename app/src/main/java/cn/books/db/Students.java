@@ -3,7 +3,9 @@ package cn.books.db;
 import org.litepal.annotation.Column;
 import org.litepal.crud.LitePalSupport;
 
-public class Students extends LitePalSupport {
+import java.io.Serializable;
+
+public class Students extends LitePalSupport implements Serializable {
     @Column
     private int id; //不可构造set方法 自增ID
     @Column
@@ -17,7 +19,7 @@ public class Students extends LitePalSupport {
     @Column
     private String stu_tel;//手机号码
     @Column
-    private String add_admin_id;//添加人的ID
+    private int add_admin_id;//添加人的ID
     @Column
     private String add_admin_name;//添加人的姓名
 
@@ -65,11 +67,11 @@ public class Students extends LitePalSupport {
         this.stu_tel = stu_tel;
     }
 
-    public String getAdd_admin_id() {
+    public int getAdd_admin_id() {
         return add_admin_id;
     }
 
-    public void setAdd_admin_id(String add_admin_id) {
+    public void setAdd_admin_id(int add_admin_id) {
         this.add_admin_id = add_admin_id;
     }
 

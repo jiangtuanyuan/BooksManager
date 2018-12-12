@@ -47,5 +47,10 @@
         <item name="android:windowBackground">@android:color/transparent
         </item><!--取消window默认背景 不然四角会有黑影-->
     </style>
+    <!-- 字体样式 -->
+    <style name="font_16_black">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 </resources>
