@@ -5,6 +5,7 @@
 
     <!-- 隐私权限 -->
     <!-- SD卡的读写权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 用于访问GPS定位 获取粗略的位置 -->
@@ -49,9 +50,10 @@
         <activity android:name=".activity.register.RegisterActivity" />
         <activity android:name=".activity.students.ui.StudenMainActivity" />
         <activity android:name=".activity.students.ui.StudenADDActivity" />
-        <activity android:name=".activity.booksmanagement.ui.BooksMainActivity"></activity>
+        <activity android:name=".activity.booksmanagement.ui.BooksMainActivity" />
         <activity android:name=".activity.user.UserChooseActivity" />
-
+        <activity android:name=".activity.booksmanagement.ui.BooksAddActivity" />
+        <activity android:name=".activity.borrowingmangement.ui.BorrowingMainActivity"></activity>
     </application>
 
 </manifest>

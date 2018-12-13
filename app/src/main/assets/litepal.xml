@@ -3,12 +3,14 @@
     <!-- 数据库名字 -->
     <dbname value="BooksDB" />
     <!-- 数据库版本 -->
-    <version value="1" />
+    <version value="2" />
     <!-- 数据库表 class路径一定要写全 -->
     <list>
         <!-- 管理员表 -->
         <mapping class="cn.books.db.Administrator" />
         <!-- 学生表 -->
         <mapping class="cn.books.db.Students" />
+        <!-- 图书表 -->
+        <mapping class="cn.books.db.Books" />
     </list>
 </litepal>

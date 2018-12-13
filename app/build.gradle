@@ -54,6 +54,8 @@ dependencies {
     compile 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
     compile 'io.reactivex.rxjava2:rxjava:2.2.3'
     compile 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    /* 权限 */
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     /*控件注解库*/
     implementation 'com.jakewharton:butterknife:9.0.0-rc2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
@@ -65,4 +67,7 @@ dependencies {
     implementation 'org.litepal.android:core:2.0.0'
     /*列表侧滑编辑删除库*/
     compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.1'
+    //文件选择
+    compile 'com.droidninja:filepicker:2.1.5'
+
 }
