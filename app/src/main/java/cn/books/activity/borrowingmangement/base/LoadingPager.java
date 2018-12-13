@@ -12,8 +12,6 @@ import cn.books.threadproxy.ThreadPoolProxyFactory;
  * 1.提供视图-->4种视图中的一种(加载中视图,错误视图,空视图,成功视图)
  * 2.加载数据
  * 3.数据和视图的绑定
- *
- * @author LiuTao
  */
 public abstract class LoadingPager extends FrameLayout {
     public static final int STATE_LOADING = 0;//加载中
@@ -40,14 +38,12 @@ public abstract class LoadingPager extends FrameLayout {
 
         mErrorView = View.inflate(mContext, R.layout.pager_error, null);
         this.addView(mErrorView);
-        mErrorView.findViewById(R.id.error_btn_retry).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                triggerLoadData();
-            }
-        });
+
+        mErrorView.findViewById(R.id.error_btn_retry).setOnClickListener(v -> triggerLoadData());
+
         mEmptyView = View.inflate(mContext, R.layout.pager_empty, null);
         this.addView(mEmptyView);
+
         refreshViewByState();
     }
 
@@ -57,16 +53,19 @@ public abstract class LoadingPager extends FrameLayout {
         } else {
             mLoadingView.setVisibility(View.GONE);
         }
+
         if (mCurState == STATE_ERROR) {
             mErrorView.setVisibility(View.VISIBLE);
         } else {
             mErrorView.setVisibility(View.GONE);
         }
+
         if (mCurState == STATE_EMPTY) {
             mEmptyView.setVisibility(View.VISIBLE);
         } else {
             mEmptyView.setVisibility(View.GONE);
         }
+
 
         if (mSuccessView == null && mCurState == STATE_SUCCESS) {
             mSuccessView = initSuccessView();

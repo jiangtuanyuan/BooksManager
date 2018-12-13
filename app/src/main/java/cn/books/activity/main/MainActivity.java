@@ -2,10 +2,10 @@ package cn.books.activity.main;
 
 import android.Manifest;
 import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
+
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import javax.security.auth.login.LoginException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +24,6 @@ import cn.books.activity.booksmanagement.ui.BooksMainActivity;
 import cn.books.activity.borrowingmangement.ui.BorrowingMainActivity;
 import cn.books.activity.login.LoginActivity;
 import cn.books.activity.students.ui.StudenMainActivity;
-import cn.books.activity.user.UserChooseActivity;
 import cn.books.base.BaseActivity;
 import cn.books.utils.SPUtils;
 import cn.books.view.IOSDialog;
@@ -56,7 +54,7 @@ public class MainActivity extends BaseActivity {
     protected void initViews(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        setTitle("  系部图书管理系统");
+        setTitle("\t\t系部图书管理系统");
         setSupportActionBar(toolbar);
         checkPermissions(this);
     }
@@ -75,8 +73,6 @@ public class MainActivity extends BaseActivity {
                 return true;
             case R.id.exit:
                 LoginExit();
-
-
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -93,7 +89,6 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.tv_tusgl://图书管理
                 startActivity(new Intent(this, BooksMainActivity.class));
-
 
               /*  Intent groupsIn = new Intent(this, UserChooseActivity.class);
                 groupsIn.putExtra("mChooseNums", "more");

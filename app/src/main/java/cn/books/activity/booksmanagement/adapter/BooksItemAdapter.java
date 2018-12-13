@@ -28,6 +28,8 @@ import cn.books.activity.students.ui.StudenADDActivity;
 import cn.books.db.Books;
 import cn.books.db.Students;
 import cn.books.utils.ToastUtil;
+import cn.books.view.IOSDialog;
+import cn.books.view.IOSDialogUtils;
 
 /**
  * Created by 蒋 on 2018/9/22.
@@ -126,21 +128,29 @@ public class BooksItemAdapter extends RecyclerView.Adapter<BooksItemAdapter.View
     }
 
     private void DeleteUser(final Books e) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setMessage("删除之后不可恢复!");
-        builder.setTitle("是否删除?");
+        IOSDialogUtils utils = IOSDialogUtils.getInstance();
+        utils.showDialogIos(mContext, "是否删除?", "取消", "确定", false);
+        utils.setOnButtonClickListener(new IOSDialogUtils.OnButtonClickListener() {
+            @Override
+            public void onCancelButtonClick(IOSDialog dialog) {
 
-        builder.setPositiveButton("确定", (dialog, which) -> {
-            dialog.dismiss();
-            e.delete();
-            ToastUtil.showToast("删除成功");
+                dialog.dismiss();
+            }
 
-            mList.clear();
-            mList.addAll(LitePal.order("id desc").find(Books.class));
-            notifyDataSetChanged();
+            @Override
+            public void onPositiveButtonClick(IOSDialog dialog) {
+                dialog.dismiss();
+
+                e.delete();
+                ToastUtil.showToast("删除成功");
+
+                mList.clear();
+                mList.addAll(LitePal.order("id desc").find(Books.class));
+                notifyDataSetChanged();
+            }
         });
-        builder.setNegativeButton("取消", (dialog, which) -> dialog.dismiss());
-        builder.show();
+
     }
+
 
 }

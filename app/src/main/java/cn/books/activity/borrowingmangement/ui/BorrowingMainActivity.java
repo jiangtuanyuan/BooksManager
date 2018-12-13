@@ -1,12 +1,11 @@
 package cn.books.activity.borrowingmangement.ui;
 
-import android.content.Intent;
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.ViewTreeObserver;
@@ -82,6 +81,7 @@ public class BorrowingMainActivity extends BaseActivity {
             }
         });
     }
+
     /**
      * 加载Fragment
      */
@@ -92,8 +92,6 @@ public class BorrowingMainActivity extends BaseActivity {
         mFragmentList.put(0, phpSendFragment);
         mFragmentList.put(1, phpSignFragment);
     }
-
-
 
 
     /**
@@ -122,7 +120,6 @@ public class BorrowingMainActivity extends BaseActivity {
 
     @OnClick(R.id.document_add)
     public void onViewClicked() {
-
         ToastUtil.showToast("新增借阅");
     }
 
