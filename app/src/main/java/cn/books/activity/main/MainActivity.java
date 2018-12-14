@@ -20,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.books.R;
+import cn.books.activity.booksmanagement.bookschoose.BooksChooseActivity;
 import cn.books.activity.booksmanagement.ui.BooksMainActivity;
 import cn.books.activity.borrowingmangement.ui.BorrowingMainActivity;
 import cn.books.activity.login.LoginActivity;
@@ -89,17 +90,19 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.tv_tusgl://图书管理
                 startActivity(new Intent(this, BooksMainActivity.class));
-
-              /*  Intent groupsIn = new Intent(this, UserChooseActivity.class);
+                /*Intent groupsIn = new Intent(this, UserChooseActivity.class);
                 groupsIn.putExtra("mChooseNums", "more");
                 startActivityForResult(groupsIn, 101);
-              */
+               */
                 break;
             case R.id.tv_tsjygl://借阅管理
                 startActivity(new Intent(this, BorrowingMainActivity.class));
 
+          /*    Intent intent = new Intent(this, BooksChooseActivity.class);
+                intent.putExtra("mChooseNums", "single");
+                startActivityForResult(intent, 100);
 
-               /* Intent intent = new Intent(this, UserChooseActivity.class);
+                Intent intent = new Intent(this, UserChooseActivity.class);
                 intent.putExtra("mChooseNums", "single");
                 startActivityForResult(intent, 100);
                */

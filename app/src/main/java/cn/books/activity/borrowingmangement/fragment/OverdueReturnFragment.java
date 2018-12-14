@@ -28,10 +28,10 @@ import cn.books.db.Borrowing;
 
 /**
  * Created by 蒋 on 2018/7/4.
- * 已归还
+ * 已逾期
  */
 
-public class ReturnFragment extends BorrBaseFragment implements OnRefreshListener {
+public class OverdueReturnFragment extends BorrBaseFragment implements OnRefreshListener {
     @BindView(R.id.tv_nodata)
     TextView tvNodata;
     @BindView(R.id.recycler_view)
@@ -77,7 +77,7 @@ public class ReturnFragment extends BorrBaseFragment implements OnRefreshListene
      */
     private void requestData() {
         mList.clear();
-        mList.addAll(LitePal.where("status = ?", "2").find(Borrowing.class));
+        mList.addAll(LitePal.where("status = ?", "3").find(Borrowing.class));
         if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
         }
@@ -90,5 +90,6 @@ public class ReturnFragment extends BorrBaseFragment implements OnRefreshListene
         if (refreshLayout != null) {
             refreshLayout.finishRefresh(2000);
         }
+
     }
 }

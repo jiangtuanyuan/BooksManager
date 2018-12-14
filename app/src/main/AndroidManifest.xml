@@ -53,7 +53,9 @@
         <activity android:name=".activity.booksmanagement.ui.BooksMainActivity" />
         <activity android:name=".activity.user.UserChooseActivity" />
         <activity android:name=".activity.booksmanagement.ui.BooksAddActivity" />
-        <activity android:name=".activity.borrowingmangement.ui.BorrowingMainActivity"></activity>
+        <activity android:name=".activity.borrowingmangement.ui.BorrowingMainActivity" />
+        <activity android:name=".activity.booksmanagement.bookschoose.BooksChooseActivity" />
+        <activity android:name=".activity.borrowingmangement.ui.BorrowingAddActivity"></activity>
     </application>
 
 </manifest>

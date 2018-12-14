@@ -36,13 +36,14 @@ public abstract class BorrBaseFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         this.borrowingMainActivity = (BorrowingMainActivity) context;
-
+        this.borrowingMainActivity.xxx = 1;
     }
 
     @Override
     public void onAttach(Activity context) {
         super.onAttach(context);
         this.borrowingMainActivity = (BorrowingMainActivity) context;
+        this.borrowingMainActivity.xxx = 1;
     }
 
     @Override

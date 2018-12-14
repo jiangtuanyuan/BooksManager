@@ -1,6 +1,6 @@
 package cn.books.activity.booksmanagement.adapter;
 
-import android.app.AlertDialog;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,9 +24,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.books.R;
 import cn.books.activity.booksmanagement.ui.BooksAddActivity;
-import cn.books.activity.students.ui.StudenADDActivity;
 import cn.books.db.Books;
-import cn.books.db.Students;
+
 import cn.books.utils.ToastUtil;
 import cn.books.view.IOSDialog;
 import cn.books.view.IOSDialogUtils;

@@ -71,7 +71,7 @@ public class BooksAddActivity extends BaseActivity {
         setContentView(R.layout.activity_books_add);
         ButterKnife.bind(this);
         initToolbarNav();
-
+        setTitle("新增图书");
     }
 
     @Override

@@ -67,7 +67,11 @@ dependencies {
     implementation 'org.litepal.android:core:2.0.0'
     /*列表侧滑编辑删除库*/
     compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.1'
+    /*下拉刷新*/
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     //文件选择
     compile 'com.droidninja:filepicker:2.1.5'
+    /*时间选择*/
+    compile 'com.contrarywind:Android-PickerView:3.2.6'
 
 }

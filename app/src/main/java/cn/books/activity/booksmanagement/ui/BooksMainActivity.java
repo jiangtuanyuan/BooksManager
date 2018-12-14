@@ -2,8 +2,8 @@ package cn.books.activity.booksmanagement.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jakewharton.rxbinding2.widget.RxTextView;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import org.litepal.LitePal;
 
@@ -27,16 +30,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.books.R;
 import cn.books.activity.booksmanagement.adapter.BooksItemAdapter;
-import cn.books.activity.students.adapter.StudenItemAdapter;
-import cn.books.activity.students.ui.StudenADDActivity;
-import cn.books.activity.user.UserBean;
 import cn.books.base.BaseActivity;
 import cn.books.db.Books;
-import cn.books.db.Students;
 import cn.books.utils.ETChangedUtlis;
-import cn.books.utils.ToastUtil;
 
-public class BooksMainActivity extends BaseActivity {
+public class BooksMainActivity extends BaseActivity implements OnRefreshListener {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.search_edt)
@@ -51,6 +49,8 @@ public class BooksMainActivity extends BaseActivity {
     RecyclerView mRecycler;
     @BindView(R.id.book_add)
     LinearLayout studentsAdd;
+    @BindView(R.id.refresh_layout)
+    SmartRefreshLayout refreshLayout;
 
     private BooksItemAdapter adapter;
 
@@ -81,6 +81,9 @@ public class BooksMainActivity extends BaseActivity {
         initToolbarNav();
         setEmployeesRecyclerw();
 
+        refreshLayout.setEnableLoadMore(false);
+        refreshLayout.setEnableRefresh(true);
+        refreshLayout.setOnRefreshListener(this);//进行下拉刷新的监听
         ETChangedUtlis.EditTextChangedListener(mSearchEdt, mSearchEdtClear);
     }
 
@@ -145,4 +148,13 @@ public class BooksMainActivity extends BaseActivity {
 
     }
 
+
+    @Override
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+        mSumList.clear();
+        mSumList.addAll(LitePal.order("id desc").find(Books.class));
+        mSearch = "";
+        Search();
+        refreshLayout.finishRefresh(2000);
+    }
 }
